@@ -20,12 +20,12 @@ handler = WebhookHandler('67e3b4786b262255f2fff4ac3e526b46')
 
 def translator_line(texts):
     lan=translator.detect(texts)
-    if lan.lang =='zh-CN':
+    if lan.lang =='zh-CN'or'zh-cn'or'zh-tw'or'zh-TW' :
         reply=translator.translate(texts, dest='en').text
     if lan.lang =='en' :
-        reply=translator.translate(texts, dest='zh-CN').text
+        reply=translator.translate(texts, dest='zh-TW').text
     else : reply='我回答不出來，抱歉' 
-	
+    print(lan.lang)
     return reply
 
 # 監聽所有來自 /callback 的 Post Request
