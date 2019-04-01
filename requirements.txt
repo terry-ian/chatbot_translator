@@ -1,3 +1,5 @@
 line-bot-sdk
 flask
+Django
+gunicorn
 googletrans
