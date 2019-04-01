@@ -27,7 +27,7 @@ def translator_line(texts):
     elif lan.lang =='en' :
         reply=translator.translate(texts, dest='zh-TW').text
     else : reply='你輸入的不是中英文' 
-    print(lan.lang)
+    print(texts)
     return reply
 
 # 監聽所有來自 /callback 的 Post Request
