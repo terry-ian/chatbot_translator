@@ -47,9 +47,9 @@ def translator_line(texts):
     return reply
 
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-	messagetext=translator_line(message)
-    line_bot_api.reply_message(event.reply_token, messagetext)
+	messagetext=translator_line(event.message.text)
+	message = TextSendMessage(text=messagetext)
+    line_bot_api.reply_message(event.reply_token, message)
 
 import os
 if __name__ == "__main__":
