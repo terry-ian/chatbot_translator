@@ -20,7 +20,7 @@ handler = WebhookHandler('67e3b4786b262255f2fff4ac3e526b46')
 
 def translator_line(texts):
     lan=translator.detect(texts)
-    if lan.lang =='zh-CN'or'zh-cn'or'zh-tw'or'zh-Tw' :
+    if lan.lang =='zh-CN':
         reply=translator.translate(texts, dest='en').text
     if lan.lang =='en' :
         reply=translator.translate(texts, dest='zh-CN').text
