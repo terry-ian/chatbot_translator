@@ -36,6 +36,7 @@ def callback():
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
+
 def translator_line(texts):
     lan=translator.detect(texts)
     if lan.lang =='zh-CN'or'zh-cn'or'zh-tw'or'zh-Tw' :
@@ -48,8 +49,8 @@ def translator_line(texts):
 
 def handle_message(event):
 	messagetext=translator_line(event.message.text)
-	message = TextSendMessage(text=messagetext)
-    line_bot_api.reply_message(event.reply_token, message)
+	message01 = TextSendMessage(text=messagetext)
+    	line_bot_api.reply_message(event.reply_token, message01)
 
 import os
 if __name__ == "__main__":
