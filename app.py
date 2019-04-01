@@ -24,10 +24,10 @@ def translator_line(texts):
         reply=translator.translate(texts, dest='en').text
     elif lan.lang =='zh-TW' :
         reply=translator.translate(texts, dest='en').text
-    if lan.lang =='en' :
+    elif lan.lang =='en' :
         reply=translator.translate(texts, dest='zh-TW').text
     else : reply='你輸入的不是中英文' 
-	
+    print(lan.lang)
     return reply
 
 # 監聽所有來自 /callback 的 Post Request
